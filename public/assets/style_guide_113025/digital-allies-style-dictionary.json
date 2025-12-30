@@ -1,0 +1,146 @@
+{
+  "color": {
+    "primary": {
+      "blue": {
+        "value": "#2563EB"
+      },
+      "light-blue": {
+        "value": "#DBEAFE"
+      },
+      "pale-blue": {
+        "value": "#E0F2FE"
+      }
+    },
+    "success": {
+      "green": {
+        "value": "#059669"
+      },
+      "light-green": {
+        "value": "#D1FAE5"
+      }
+    },
+    "neutral": {
+      "black": {
+        "value": "#000000"
+      },
+      "white": {
+        "value": "#FFFFFF"
+      },
+      "dark-gray": {
+        "value": "#414243"
+      },
+      "medium-gray": {
+        "value": "#6B7280"
+      },
+      "light-gray": {
+        "value": "#E5E7EB"
+      }
+    },
+    "accent": {
+      "light-teal": {
+        "value": "#5EEAD4"
+      },
+      "alert-red": {
+        "value": "#EF4444"
+      }
+    }
+  },
+  "gradient": {
+    "primary": {
+      "value": "linear-gradient(135deg, #2563EB, #059669)"
+    },
+    "blue": {
+      "value": "linear-gradient(135deg, #438eff, #2563eb)"
+    },
+    "green": {
+      "value": "linear-gradient(135deg, #059669, #10b981)"
+    },
+    "light-blue": {
+      "value": "linear-gradient(135deg, #DBEAFE, #FFFFFF)"
+    }
+  },
+  "font": {
+    "family": {
+      "primary": {
+        "value": "'Segoe UI', system-ui, sans-serif"
+      },
+      "secondary": {
+        "value": "'Source Sans Pro', sans-serif"
+      }
+    },
+    "size": {
+      "hero": {
+        "value": "48px"
+      },
+      "h1": {
+        "value": "48px"
+      },
+      "h2": {
+        "value": "36px"
+      },
+      "h3": {
+        "value": "24px"
+      },
+      "body": {
+        "value": "18px"
+      },
+      "small": {
+        "value": "14px"
+      }
+    },
+    "weight": {
+      "black": {
+        "value": 900
+      },
+      "bold": {
+        "value": 700
+      },
+      "semibold": {
+        "value": 600
+      },
+      "medium": {
+        "value": 500
+      },
+      "regular": {
+        "value": 400
+      }
+    }
+  },
+  "spacing": {
+    "xs": {
+      "value": "4px"
+    },
+    "sm": {
+      "value": "8px"
+    },
+    "md": {
+      "value": "16px"
+    },
+    "lg": {
+      "value": "24px"
+    },
+    "xl": {
+      "value": "32px"
+    },
+    "2xl": {
+      "value": "48px"
+    },
+    "3xl": {
+      "value": "64px"
+    }
+  },
+  "shadow": {
+    "sm": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    "md": {
+      "value": "0 1px 3px rgba(0, 0, 0, 0.1)"
+    },
+    "lg": {
+      "value": "0 4px 6px rgba(0, 0, 0, 0.1)"
+    },
+    "xl": {
+      "value": "0 10px 15px rgba(0, 0, 0, 0.1)"
+    }
+  }
+}

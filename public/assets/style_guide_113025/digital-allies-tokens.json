@@ -1,0 +1,66 @@
+{
+  "colors": {
+    "primary": {
+      "blue": "#2563EB",
+      "lightBlue": "#DBEAFE",
+      "paleBlue": "#E0F2FE"
+    },
+    "success": {
+      "green": "#059669",
+      "lightGreen": "#D1FAE5"
+    },
+    "neutral": {
+      "white": "#FFFFFF",
+      "black": "#000000",
+      "darkGray": "#414243",
+      "mediumGray": "#6B7280",
+      "lightGray": "#E5E7EB"
+    },
+    "accent": {
+      "lightTeal": "#5EEAD4",
+      "alertRed": "#EF4444"
+    }
+  },
+  "gradients": {
+    "primary": "linear-gradient(135deg, #2563EB, #059669)",
+    "blue": "linear-gradient(135deg, #438eff, #2563eb)",
+    "green": "linear-gradient(135deg, #059669, #10b981)",
+    "lightBlue": "linear-gradient(135deg, #DBEAFE, #FFFFFF)"
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "'Segoe UI', system-ui, sans-serif",
+      "secondary": "'Source Sans Pro', sans-serif"
+    },
+    "fontSize": {
+      "hero": "48px",
+      "h1": "48px",
+      "h2": "36px",
+      "h3": "24px",
+      "body": "18px",
+      "small": "14px",
+      "xs": "12px"
+    },
+    "fontWeight": {
+      "black": 900,
+      "bold": 700,
+      "semibold": 600,
+      "medium": 500,
+      "regular": 400
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.6
+    }
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "2xl": "48px",
+    "3xl": "64px"
+  }
+}

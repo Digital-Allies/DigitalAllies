@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="defaultGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#438eff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.2); }
+      }
+      .pulsing-dot {
+        animation: pulse 3s ease-in-out infinite;
+        transform-origin: 50% 50%; /* Center of the element's bounding box */
+        transform-box: fill-box;
+      }
+    </style>
+  </defs>
+  
+  <circle class="pulsing-dot" cx="12" cy="20" r="6" fill="#438eff" />
+  
+  <text x="28" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" 
+        fill="url(#blueGradient)"
+        >
+    Digital Allies
+  </text>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.2); }
+      }
+      .pulsing-dot {
+        animation: pulse 3s ease-in-out infinite;
+        transform-origin: 50% 50%; /* Center of the element's bounding box */
+        transform-box: fill-box;
+      }
+    </style>
+  </defs>
+  
+  <circle class="pulsing-dot" cx="12" cy="12" r="8" fill="#000000" />
+</svg>
