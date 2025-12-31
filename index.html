@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags -->
     <title>Digital Allies - Digital Solutions for the Real World.</title>
     <meta name="description" content="We specialize in crafting modern websites and digital experiences that reflect your core identity and resonate with your audience.">
     <meta name="keywords" content="Web Design Kingman AZ, Accessibility, Bilingual Websites, Small Business SEO, AI optimization, Digital Allies">
@@ -23,14 +24,21 @@
     <meta property="twitter:title" content="Digital Allies - Digital Solutions for the Real World">
     <meta property="twitter:description" content="We will transform your ideas into beautiful, functional, and inclusive digital products that genuinely connect with everyone">
     <meta property="twitter:image" content="https://digitalallies.net/assets/images/og-image.jpg">
-    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="DA" />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
-    <!-- Structured Data (Enhanced for AI Search) -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="DA" />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
         [{
             "@context": "https://schema.org",
@@ -54,7 +62,7 @@
         }, {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Web Design, Web Hosting, Consulting, Branding, Graphic Design,",
+            "name": "Web Design, Web Hosting, Consulting, Branding, Graphic Design",
             "provider": {
                 "@type": "Organization",
                 "name": "Digital Allies"
@@ -81,20 +89,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HVGNEKE8R"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-9HVGNEKE8R');
     </script>
-  
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -149,15 +148,37 @@
             background: rgba(2, 6, 23, 0.8);
             backdrop-filter: blur(8px);
         }
+
+        /* Success Message Box */
+        #success-message {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 200;
+            transform: translateY(150%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #success-message.show {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="min-h-screen bg-slate-950 text-white font-sans selection-blue overflow-x-hidden">
+
+    <!-- Success Feedback UI -->
+    <div id="success-message" class="bg-blue-600 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i data-lucide="check-circle" class="w-6 h-6"></i>
+        <div>
+            <p class="font-bold">Message Ready!</p>
+            <p class="text-xs opacity-90">Opening your email client to send...</p>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-5">
         <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <img src="public/assets/logo/digital-allies-logo-default.svg" alt="Digital Allies Logo" class="h-10 w-auto transition-transform group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <img src="assets/logo/digital-allies-logo-default.svg" alt="Digital Allies Logo" class="h-10 w-auto transition-transform group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                 <div style="display:none" class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
                     <i data-lucide="heart" class="w-6 h-6 text-white fill-white/20"></i>
                 </div>
@@ -174,7 +195,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="vision" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="vision" class="relative pt-40 pb-20 md:pt-56 md:pb-32 overflow-hidden">
         <!-- Background Glows -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full pointer-events-none opacity-20">
             <div class="absolute top-[-10%] left-[-10%] w-1/2 h-1/2 bg-blue-600 rounded-full blur-[120px]"></div>
@@ -183,19 +204,20 @@
 
         <div class="max-w-7xl mx-auto px-4 relative z-10 text-center md:text-left">
             <div class="max-w-4xl">
-                <div class="animate-fade-up opacity-0 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                    </span>
-                    Digital Allies V2 • Coming Soon
+                <div class="animate-fade-up opacity-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Digital Allies V2 • Coming Soon
+                    </div>
+                    <p class="text-sm text-slate-400 mb-8 italic">This is a temporary landing page while we upgrade our digital home. Our full experience will be back online soon.</p>
                 </div>
                 
                 <h1 class="animate-fade-up opacity-0 delay-1 text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8">
-                    Your Digital Success, <br />
-                    <span class="heading-gradient">
-                        Managed with Care.
-                    </span>
+                    Digital Solutions for <br />
+                    <span class="heading-gradient">the Real World.</span>
                 </h1>
 
                 <p class="animate-fade-up opacity-0 delay-2 text-lg md:text-xl text-white leading-relaxed mb-10 max-w-3xl">
@@ -225,7 +247,7 @@
                 <p class="text-white text-lg max-w-2xl mx-auto">Modern standards, accessibility, and cultural relevance are fundamental to every solution we provide.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-10">
+            <div class="grid lg:grid-cols-2 gap-10">
                 <!-- Service 1: Web Design -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
@@ -233,7 +255,7 @@
                             <i data-lucide="monitor" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Web Design</h3>
+                            <h3 class="text-2xl font-bold text-white">Web Design</h3>
                             <span class="text-blue-400 font-semibold text-sm italic">from $100</span>
                         </div>
                     </div>
@@ -249,7 +271,7 @@
                             <i data-lucide="server" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Web Hosting</h3>
+                            <h3 class="text-2xl font-bold text-white">Web Hosting</h3>
                             <span class="text-blue-400 font-semibold text-sm italic">from $50</span>
                         </div>
                     </div>
@@ -265,12 +287,12 @@
                             <i data-lucide="cpu" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">AI Consulting</h3>
+                            <h3 class="text-2xl font-bold text-white">AI Consulting</h3>
                             <span class="text-blue-400 font-semibold text-sm italic">Free discovery meeting</span>
                         </div>
                     </div>
                     <p class="text-white leading-relaxed text-lg">
-                        Strategic guidance on integrating AI into your business with real, everyday tools that can help you automate workflows ranging from content creation and customer service responses to smart reminders and basic bookkeeping prep.
+                        Strategic guidance on integrating AI into your business with real, everyday tools that can help you automate workflows ranging from content creation and customer service responses to smart reminders, inventory or appointment alerts, and basic bookkeeping prep.
                     </p>
                 </div>
 
@@ -281,7 +303,7 @@
                             <i data-lucide="settings" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Technology Consulting</h3>
+                            <h3 class="text-2xl font-bold text-white">Technology Consulting</h3>
                             <span class="text-blue-400 font-semibold text-sm italic">Free discovery meeting</span>
                         </div>
                     </div>
@@ -297,12 +319,12 @@
                             <i data-lucide="compass" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Brand Discovery</h3>
-                            <span class="text-blue-400 font-semibold text-sm italic">Free discovery</span>
+                            <h3 class="text-2xl font-bold text-white">Brand Discovery</h3>
+                            <span class="text-blue-400 font-semibold text-sm italic">Free discovery meeting</span>
                         </div>
                     </div>
                     <p class="text-white leading-relaxed text-lg">
-                        Collaborative sessions that dig into your story, customers, and community so your logo, colors, and messaging feel authentically “you,” helping people recognize and remember your business online and in person.
+                        Collaborative sessions that dig into your story, customers, and community so your logo, colors, and messaging feel authentically “you,” and help people recognize and remember your business online and in person.
                     </p>
                 </div>
 
@@ -313,12 +335,12 @@
                             <i data-lucide="palette" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Graphic Design</h3>
+                            <h3 class="text-2xl font-bold text-white">Graphic Design</h3>
                             <span class="text-blue-400 font-semibold text-sm italic">from $75</span>
                         </div>
                     </div>
                     <p class="text-white leading-relaxed text-lg">
-                        Polished print and digital visuals—menus, signage, social graphics, and more—that make your business look as professional as it feels, and give you consistent assets you can reuse everywhere.
+                        Polished print and digital visuals—menus, signage, social graphics, pitch decks, and more—that make your business look as professional as it feels, and give you consistent assets you can reuse everywhere.
                     </p>
                 </div>
 
@@ -329,12 +351,12 @@
                             <i data-lucide="trending-up" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">AEO & SEO Consulting</h3>
-                            <span class="text-blue-400 font-semibold text-sm italic">Free discovery</span>
+                            <h3 class="text-2xl font-bold text-white">AEO & SEO Consulting</h3>
+                            <span class="text-blue-400 font-semibold text-sm italic">Free discovery meeting</span>
                         </div>
                     </div>
                     <p class="text-white leading-relaxed text-lg">
-                        Optimization that helps you show up where customers are looking—Google, Maps, and AI assistants—so locals and visitors can discover you, get directions, and trust your sources faster.
+                        Search and AI-engine optimization that helps you show up where customers are actually looking—Google, Maps, and emerging AI assistants—so locals and visitors can discover you, get directions, and trust you and your sources faster.
                     </p>
                 </div>
 
@@ -345,12 +367,12 @@
                             <i data-lucide="life-buoy" class="w-7 h-7"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold">Training & Support</h3>
-                            <span class="text-blue-400 font-semibold text-sm italic">Always free</span>
+                            <h3 class="text-2xl font-bold text-white">Training & Support</h3>
+                            <span class="text-blue-400 font-semibold text-sm italic text-xs uppercase tracking-tighter">Always free and included</span>
                         </div>
                     </div>
                     <p class="text-white leading-relaxed text-lg">
-                        Patient, ongoing help so you and your team know how to use your tools—through workshops and “show-me-how” sessions—until managing your digital setup feels comfortable.
+                        Training and Support services are always free and part of the Digital Allies partnership mission. We provide patient, ongoing help so you and your team know how to use your website and tools—through workshops, checklists, and “show-me-how” sessions—until managing your digital setup feels comfortable.
                     </p>
                 </div>
             </div>
@@ -366,20 +388,20 @@
             </div>
             
             <div class="bg-slate-900/60 p-8 md:p-12 rounded-3xl border border-slate-800 shadow-2xl">
-                <form onsubmit="event.preventDefault();" class="grid grid-cols-1 gap-6">
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="grid grid-cols-1 gap-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Name</label>
-                            <input type="text" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your Name">
+                            <input type="text" id="contactName" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your Name">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Email</label>
-                            <input type="email" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="email@example.com">
+                            <input type="email" id="contactEmail" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="email@example.com">
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-slate-300 mb-2">Message</label>
-                        <textarea rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="How can we help?"></textarea>
+                        <textarea id="contactMessage" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="How can we help?"></textarea>
                     </div>
                     <button class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20">
                         Send Message
@@ -394,10 +416,10 @@
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-10">
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <div class="flex items-center gap-2 mb-6">
-                    <img src="public/assets/logo/digital-allies-logo-footer.svg" alt="Digital Allies" class="h-8 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <img src="assets/logo/digital-allies-logo-footer.svg" alt="Digital Allies" class="h-8 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                     <span style="display:none" class="font-bold text-lg text-white">Digital Allies</span>
                 </div>
-                <p class="text-sm text-white max-w-xs opacity-80">
+                <p class="text-sm text-white max-w-xs opacity-90">
                     Building lasting digital partnerships through transparency, technical excellence, and proactive advocacy.
                 </p>
             </div>
@@ -415,11 +437,11 @@
             </div>
 
             <div class="text-center md:text-right">
-                <p class="text-xs text-white font-medium mb-1 opacity-60">
+                <p class="text-xs text-white font-medium mb-1 opacity-70">
                     © 2026 Digital Allies. All rights reserved.
                 </p>
-                <p class="text-[10px] text-blue-500 uppercase tracking-widest font-bold">
-                    B2B Services Excellence
+                <p class="text-[10px] text-blue-500 uppercase tracking-widest font-extrabold">
+                    B2B Excellence
                 </p>
             </div>
         </div>
@@ -435,10 +457,10 @@
                 <div class="w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center text-blue-500 mx-auto mb-6">
                     <i data-lucide="send" class="w-8 h-8"></i>
                 </div>
-                <h3 class="text-3xl font-bold mb-4">Stay in the loop</h3>
-                <p class="text-white opacity-80 mb-8">Join our newsletter for digital strategy tips, AI updates, and community highlights.</p>
-                <form onsubmit="event.preventDefault(); toggleNewsletter();" class="space-y-4">
-                    <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Enter your email">
+                <h3 class="text-3xl font-bold mb-4 heading-gradient">Stay in the loop</h3>
+                <p class="text-white opacity-90 mb-8">Join our newsletter for digital strategy tips, AI updates, and community highlights.</p>
+                <form id="newsletterForm" onsubmit="handleNewsletterSubmit(event)" class="space-y-4">
+                    <input type="email" id="newsletterEmail" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Enter your email">
                     <button class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all">
                         Subscribe Now
                     </button>
@@ -467,6 +489,44 @@
         function toggleNewsletter() {
             const modal = document.getElementById('newsletterModal');
             modal.classList.toggle('hidden');
+        }
+
+        // Handle Newsletter Submission
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            const subject = encodeURIComponent("Newsletter Subscription Request");
+            const body = encodeURIComponent(`Please add me to the Digital Allies newsletter.\n\nEmail: ${email}`);
+            
+            window.location.href = `mailto:contact@digitalallies.net?subject=${subject}&body=${body}`;
+            
+            showSuccess();
+            toggleNewsletter();
+            document.getElementById('newsletterForm').reset();
+        }
+
+        // Handle Contact Submission
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            const subject = encodeURIComponent(`New Inquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            window.location.href = `mailto:contact@digitalallies.net?subject=${subject}&body=${body}`;
+            
+            showSuccess();
+            document.getElementById('contactForm').reset();
+        }
+
+        function showSuccess() {
+            const msg = document.getElementById('success-message');
+            msg.classList.add('show');
+            setTimeout(() => {
+                msg.classList.remove('show');
+            }, 5000);
         }
     </script>
 </body>
