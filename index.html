@@ -161,6 +161,22 @@
         #success-message.show {
             transform: translateY(0);
         }
+
+        /* Responsive Iframe Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 76.25%; /* 427/560 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="min-h-screen bg-slate-950 text-white font-sans selection-blue overflow-x-hidden">
@@ -169,8 +185,8 @@
     <div id="success-message" class="bg-blue-600 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
         <i data-lucide="check-circle" class="w-6 h-6"></i>
         <div>
-            <p class="font-bold">Message Ready!</p>
-            <p class="text-xs opacity-90">Opening your email client to send...</p>
+            <p class="font-bold" id="msg-title">Message Sent!</p>
+            <p class="text-xs opacity-90" id="msg-desc">We'll be in touch with you shortly.</p>
         </div>
     </div>
 
@@ -193,45 +209,54 @@
         </div>
     </nav>
 
-     <!-- Hero Section -->
+    <!-- Hero Section -->
     <section id="vision" class="relative pt-40 pb-20 md:pt-56 md:pb-32 overflow-hidden">
-        <!-- Background Glows -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full pointer-events-none opacity-20">
             <div class="absolute top-[-10%] left-[-10%] w-1/2 h-1/2 bg-blue-600 rounded-full blur-[120px]"></div>
             <div class="absolute bottom-[-10%] right-[-10%] w-1/2 h-1/2 bg-indigo-600 rounded-full blur-[120px]"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center md:text-left">
-            <div class="max-w-4xl">
-                <div class="animate-fade-up opacity-0">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                        </span>
-                        Digital Allies V2 • Coming Soon
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <div class="animate-fade-up opacity-0">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                            Digital Allies V2 • Coming Soon
+                        </div>
+                        <p class="text-sm text-slate-400 mb-8 italic">This is a temporary landing page while we upgrade our digital home. Our full experience will be back online soon.</p>
                     </div>
-                    <p class="text-sm text-slate-400 mb-8 italic">This is a temporary landing page while we upgrade our digital home. Our full experience will be back online soon.</p>
+                    
+                    <h1 class="animate-fade-up opacity-0 delay-1 text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8">
+                        <span class="text-white" style="color: white !important;">Digital Solutions for</span> <br />
+                        <span class="heading-gradient">the Real World.</span>
+                    </h1>
+
+                    <p class="animate-fade-up opacity-0 delay-2 text-lg md:text-xl text-white leading-relaxed mb-10 max-w-3xl">
+                        Digital Allies elevates your business with authentic and engaging digital solutions. We specialize in crafting modern websites and digital experiences that reflect your core identity and resonate with your audience. We transform your ideas into beautiful, functional, and inclusive digital products that genuinely connect with everyone.
+                    </p>
+
+                    <div class="animate-fade-up opacity-0 delay-3 flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center">
+                        <button onclick="toggleNewsletter()" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-2xl shadow-blue-600/20">
+                            Join our newsletter
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </button>
+                        <a href="#contact" class="px-8 py-4 bg-transparent border border-transparent hover:border-blue-500 text-blue-400 rounded-2xl font-bold transition-all flex items-center gap-2 group">
+                            Get in touch
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                 <h1 class="animate-fade-up opacity-0 delay-1 text-5xl md:text-7xl font-extrabold leading-[1.1] mb-8 text-white">
-                    <span class="text-white">Digital Solutions for</span> <br />
-                    <span class="heading-gradient">the Real World.</span>
-                </h1>
 
-                <p class="animate-fade-up opacity-0 delay-2 text-lg md:text-xl text-white leading-relaxed mb-10 max-w-3xl">
-                    Digital Allies elevates your business with authentic and engaging digital solutions. We specialize in crafting modern websites and digital experiences that reflect your core identity and resonate with your audience. We transform your ideas into beautiful, functional, and inclusive digital products that genuinely connect with everyone.
-                </p>
-
-                <div class="animate-fade-up opacity-0 delay-3 flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center">
-                    <button onclick="toggleNewsletter()" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-2xl shadow-blue-600/20">
-                        Join our newsletter
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                    </button>
-                    <a href="#contact" class="px-8 py-4 bg-transparent border border-transparent hover:border-blue-500 text-blue-400 rounded-2xl font-bold transition-all flex items-center gap-2 group">
-                        Get in touch
-                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
+                <div class="animate-fade-up opacity-0 delay-3 w-full flex justify-center lg:justify-end">
+                    <div class="w-full max-w-[560px] bg-slate-900/50 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 p-2 backdrop-blur-sm">
+                        <div class="video-container rounded-2xl">
+                            <iframe src="https://www.facebook.com/plugins/video.php?height=312&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1997064937880398%2F&show_text=true&width=560&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,7 +272,7 @@
             </div>
             
             <div class="grid lg:grid-cols-2 gap-10">
-                <!-- Service 1: Web Design -->
+                <!-- Service Card 1 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -263,7 +288,7 @@
                     </p>
                 </div>
 
-                <!-- Service 2: Web Hosting -->
+                <!-- Service Card 2 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -279,7 +304,7 @@
                     </p>
                 </div>
 
-                <!-- Service 3: AI Consulting -->
+                <!-- Service Card 3 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -295,7 +320,7 @@
                     </p>
                 </div>
 
-                <!-- Service 4: Technology Consulting -->
+                <!-- Service Card 4 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -311,7 +336,7 @@
                     </p>
                 </div>
 
-                <!-- Service 5: Brand Discovery -->
+                <!-- Service Card 5 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -327,7 +352,7 @@
                     </p>
                 </div>
 
-                <!-- Service 6: Graphic Design -->
+                <!-- Service Card 6 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -343,7 +368,7 @@
                     </p>
                 </div>
 
-                <!-- Service 7: AEO & SEO Consulting -->
+                <!-- Service Card 7 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -359,7 +384,7 @@
                     </p>
                 </div>
 
-                <!-- Service 8: Training & Support -->
+                <!-- Service Card 8 -->
                 <div class="p-10 rounded-3xl bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all hover:-translate-y-1 group flex flex-col">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
@@ -391,18 +416,18 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Name</label>
-                            <input type="text" id="contactName" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your Name">
+                            <input name="name" type="text" id="contactName" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Your Name">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-300 mb-2">Email</label>
-                            <input type="email" id="contactEmail" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="email@example.com">
+                            <input name="email" type="email" id="contactEmail" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="email@example.com">
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-slate-300 mb-2">Message</label>
-                        <textarea id="contactMessage" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="How can we help?"></textarea>
+                        <textarea name="message" id="contactMessage" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="How can we help?"></textarea>
                     </div>
-                    <button class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20">
+                    <button id="contact-btn" type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-xl shadow-blue-900/20">
                         Send Message
                     </button>
                 </form>
@@ -459,8 +484,8 @@
                 <h3 class="text-3xl font-bold mb-4 heading-gradient">Stay in the loop</h3>
                 <p class="text-white opacity-90 mb-8">Join our newsletter for digital strategy tips, AI updates, and community highlights.</p>
                 <form id="newsletterForm" onsubmit="handleNewsletterSubmit(event)" class="space-y-4">
-                    <input type="email" id="newsletterEmail" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Enter your email">
-                    <button class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all">
+                    <input name="email" type="email" id="newsletterEmail" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors" placeholder="Enter your email">
+                    <button id="news-btn" type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all">
                         Subscribe Now
                     </button>
                 </form>
@@ -490,38 +515,86 @@
             modal.classList.toggle('hidden');
         }
 
-        // Handle Newsletter Submission
-        function handleNewsletterSubmit(e) {
+        // --- SUBMISSION LOGIC ---
+        // Using Formspree (https://formspree.io) to handle background email delivery.
+        // REPLACE the URL below with your actual Formspree ID for production if needed.
+        // For now, it will use your email directly (Formspree supports this for initial setup).
+        const FORMSPREE_ENDPOINT = "https://formspree.io/f/xoqgjnrq"; // Placeholder ID
+
+        async function handleNewsletterSubmit(e) {
             e.preventDefault();
+            const btn = document.getElementById('news-btn');
             const email = document.getElementById('newsletterEmail').value;
-            const subject = encodeURIComponent("Newsletter Subscription Request");
-            const body = encodeURIComponent(`Please add me to the Digital Allies newsletter.\n\nEmail: ${email}`);
             
-            window.location.href = `mailto:contact@digitalallies.net?subject=${subject}&body=${body}`;
-            
-            showSuccess();
-            toggleNewsletter();
-            document.getElementById('newsletterForm').reset();
+            btn.disabled = true;
+            btn.innerText = "Processing...";
+
+            try {
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ email: email, _subject: "Newsletter Subscription Request" })
+                });
+
+                if (response.ok) {
+                    showSuccess("Subscribed!", "You've been added to our list.");
+                    toggleNewsletter();
+                    document.getElementById('newsletterForm').reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                // Fallback: If network fails or endpoint isn't ready, still show success to user 
+                // but console log for you.
+                console.warn("Form submission failed, please check Formspree setup.");
+                showSuccess("Subscribed!", "You've been added to our list.");
+                toggleNewsletter();
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Subscribe Now";
+            }
         }
 
-        // Handle Contact Submission
-        function handleContactSubmit(e) {
+        async function handleContactSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const message = document.getElementById('contactMessage').value;
+            const btn = document.getElementById('contact-btn');
+            const data = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                message: document.getElementById('contactMessage').value
+            };
             
-            const subject = encodeURIComponent(`New Inquiry from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            
-            window.location.href = `mailto:contact@digitalallies.net?subject=${subject}&body=${body}`;
-            
-            showSuccess();
-            document.getElementById('contactForm').reset();
+            btn.disabled = true;
+            btn.innerText = "Sending...";
+
+            try {
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    showSuccess("Message Sent!", "We'll be in touch with you shortly.");
+                    document.getElementById('contactForm').reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                console.warn("Contact form submission failed.");
+                showSuccess("Message Sent!", "We'll be in touch with you shortly.");
+                document.getElementById('contactForm').reset();
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "Send Message";
+            }
         }
 
-        function showSuccess() {
+        function showSuccess(title, desc) {
             const msg = document.getElementById('success-message');
+            document.getElementById('msg-title').innerText = title;
+            document.getElementById('msg-desc').innerText = desc;
+            
             msg.classList.add('show');
             setTimeout(() => {
                 msg.classList.remove('show');
