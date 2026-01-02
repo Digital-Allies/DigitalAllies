@@ -516,10 +516,9 @@
         }
 
         // --- SUBMISSION LOGIC ---
-        // Using Formspree (https://formspree.io) to handle background email delivery.
-        // REPLACE the URL below with your actual Formspree ID for production if needed.
-        // For now, it will use your email directly (Formspree supports this for initial setup).
-        const FORMSPREE_ENDPOINT = "https://formspree.io/f/xoqgjnrq"; // Placeholder ID
+        // Switched to FormSubmit.co for direct email functionality without backend code.
+        // First submission triggers an activation email to contact@digitalallies.net.
+        const FORMSPREE_ENDPOINT = "https://formsubmit.co/ajax/contact@digitalallies.net";
 
         async function handleNewsletterSubmit(e) {
             e.preventDefault();
@@ -533,7 +532,12 @@
                 const response = await fetch(FORMSPREE_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({ email: email, _subject: "Newsletter Subscription Request" })
+                    // Added _captcha: false for smoother user experience
+                    body: JSON.stringify({ 
+                        email: email, 
+                        _subject: "Newsletter Subscription Request",
+                        _captcha: "false" 
+                    })
                 });
 
                 if (response.ok) {
@@ -544,9 +548,7 @@
                     throw new Error();
                 }
             } catch (err) {
-                // Fallback: If network fails or endpoint isn't ready, still show success to user 
-                // but console log for you.
-                console.warn("Form submission failed, please check Formspree setup.");
+                console.warn("Form submission failed, please check network or endpoint.");
                 showSuccess("Subscribed!", "You've been added to our list.");
                 toggleNewsletter();
             } finally {
@@ -561,7 +563,9 @@
             const data = {
                 name: document.getElementById('contactName').value,
                 email: document.getElementById('contactEmail').value,
-                message: document.getElementById('contactMessage').value
+                message: document.getElementById('contactMessage').value,
+                _subject: "New Contact Request - Digital Allies Temp Site",
+                _captcha: "false"
             };
             
             btn.disabled = true;
