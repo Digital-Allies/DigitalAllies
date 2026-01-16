@@ -43,11 +43,21 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, ChartTooltip, Legend);
 
-const firebaseConfig = JSON.parse(__firebase_config);
+// Initialize Firebase with your provided credentials
+const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+  apiKey: "AIzaSyAQKyeDqBL6TXdPKefBgsqSjNcsM0HCP1I",
+  authDomain: "reseller-command.firebaseapp.com",
+  projectId: "reseller-command",
+  storageBucket: "reseller-command.firebasestorage.app",
+  messagingSenderId: "218519560923",
+  appId: "1:218519560923:web:a219bafdcda14c8ce922fe",
+  measurementId: "G-6LBC10PPDH"
+};
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'reseller-cmd-center';
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'reseller-app-v1';
 
 const PLATFORMS = ['eBay', 'Depop', 'Marketplace', 'Poshmark', 'Mercari', 'Other'];
 const CATEGORIES = ['Clothing', 'Housewares', 'Electronics', 'Toys', 'Collectibles', 'Other'];
