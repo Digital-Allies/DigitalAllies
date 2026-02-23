@@ -470,59 +470,103 @@
             </p>
         </div>
 
-        <div class="space-y-12">
+        <div class="space-y-4">
 
             <!-- AEO / SEO -->
-            <div class="structural-border bg-bone-white p-8 md:p-12">
-                <div class="flex flex-col items-center text-center">
-                    <h3 class="font-headers font-bold text-2xl mb-8" data-en="AEO &amp; SEO Architecture"
-                        data-es="Arquitectura AEO y SEO">AEO &amp; SEO Architecture</h3>
-                    <img src="aeo search.svg" alt="AEO and SEO search process diagram"
-                        class="w-full max-w-5xl mb-8 object-contain" style="background: transparent;">
-                    <p class="text-sm leading-relaxed max-w-3xl mb-8"
-                        data-en="Getting found by search engines is a structural problem. I review your site&rsquo;s foundation and fix the parts that keep you invisible."
-                        data-es="Ser encontrado en buscadores es un problema estructural. Reviso la base de tu sitio y corrijo las partes que te mantienen invisible.">
-                        Getting found by search engines is a structural problem. I review your site&rsquo;s foundation
-                        and fix the parts that keep you invisible.
-                    </p>
-                    <img src="aeo search 2.svg" alt="AEO and SEO search architecture detail diagram"
-                        class="w-full max-w-5xl object-contain" style="background: transparent;">
+            <details class="structural-border bg-bone-white group">
+                <summary
+                    class="p-6 cursor-pointer font-headers font-bold text-base md:text-xl flex justify-between items-center hover:bg-light-pink transition"
+                    data-en="AEO &amp; SEO Architecture" data-es="Arquitectura AEO y SEO">
+                    AEO &amp; SEO Architecture
+                    <span
+                        class="text-primary-blue text-xl ml-4 flex-shrink-0 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <div class="px-6 pb-8 md:px-12 md:pb-12 border-t border-gray-dark/10 pt-6">
+                    <div class="flex flex-col items-center text-center">
+                        <picture class="w-full max-w-5xl mb-8">
+                            <source media="(min-width: 768px)" srcset="diagrams/aeo-seo-overview.png">
+                            <img src="diagrams/aeo-seo-overview-mobile.png"
+                                alt="AEO and SEO search process diagram showing how user search queries flow through traditional SEO (Google, Bing) and AI-driven AEO (ChatGPT, AI assistants) to reach your business platform"
+                                class="w-full object-contain rounded-lg">
+                        </picture>
+                        <p class="text-sm leading-relaxed max-w-3xl mb-8"
+                            data-en="Getting found by search engines is a structural problem. I review your site&rsquo;s foundation and fix the parts that keep you invisible."
+                            data-es="Ser encontrado en buscadores es un problema estructural. Reviso la base de tu sitio y corrijo las partes que te mantienen invisible.">
+                            Getting found by search engines is a structural problem. I review your site&rsquo;s
+                            foundation
+                            and fix the parts that keep you invisible.
+                        </p>
+                        <picture class="w-full max-w-5xl">
+                            <source media="(min-width: 768px)" srcset="diagrams/aeo-seo-detail.png">
+                            <img src="diagrams/aeo-seo-detail-mobile.png"
+                                alt="AEO and SEO technical architecture detail showing SEO components (Schema Markup, Structured Data, Meta Tags, Semantic HTML) and AEO components (Conversational Content, Entity Recognition, Knowledge Graph, Featured Snippets)"
+                                class="w-full object-contain rounded-lg">
+                        </picture>
+                    </div>
                 </div>
-            </div>
+            </details>
 
             <!-- Process -->
-            <div class="structural-border bg-bone-white p-8 md:p-12">
-                <div class="flex flex-col items-center text-center">
-                    <h3 class="font-headers font-bold text-2xl mb-8" data-en="The Four-Step Process"
-                        data-es="El Proceso de Cuatro Pasos">The Four-Step Process</h3>
-                    <img src="Process.svg" alt="Four-step process flowchart diagram"
-                        class="w-full max-w-5xl mb-8 object-contain" style="background: transparent;">
-                    <p class="text-sm leading-relaxed max-w-3xl"
-                        data-en="Discover &rarr; Design &rarr; Build &rarr; Maintain. Each step has a clear entry point and a clear exit. No ambiguity. No surprise invoices."
-                        data-es="Descubrir &rarr; Diseñar &rarr; Construir &rarr; Mantener. Cada paso tiene una entrada y salida clara. Sin ambigüedad. Sin facturas sorpresa.">
-                        Discover &rarr; Design &rarr; Build &rarr; Maintain. Each step has a clear entry point and a
-                        clear exit. No ambiguity. No surprise invoices.
-                    </p>
+            <details class="structural-border bg-bone-white group">
+                <summary
+                    class="p-6 cursor-pointer font-headers font-bold text-base md:text-xl flex justify-between items-center hover:bg-light-pink transition"
+                    data-en="The Four-Step Process" data-es="El Proceso de Cuatro Pasos">
+                    The Four-Step Process
+                    <span
+                        class="text-primary-blue text-xl ml-4 flex-shrink-0 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <div class="px-6 pb-8 md:px-12 md:pb-12 border-t border-gray-dark/10 pt-6">
+                    <div class="flex flex-col items-center text-center">
+                        <picture class="w-full max-w-5xl mb-8">
+                            <source media="(min-width: 768px)" srcset="diagrams/process.png">
+                            <img src="diagrams/process-mobile.png"
+                                alt="Four-step process flowchart: Step 1 Discover (learn about your business), Step 2 Design (plan the solution), Step 3 Build (develop and implement), Step 4 Maintain (ongoing support and optimization)"
+                                class="w-full object-contain rounded-lg">
+                        </picture>
+                        <p class="text-sm leading-relaxed max-w-3xl"
+                            data-en="Discover &rarr; Design &rarr; Build &rarr; Maintain. Each step has a clear entry point and a clear exit. No ambiguity. No surprise invoices."
+                            data-es="Descubrir &rarr; Diseñar &rarr; Construir &rarr; Mantener. Cada paso tiene una entrada y salida clara. Sin ambigüedad. Sin facturas sorpresa.">
+                            Discover &rarr; Design &rarr; Build &rarr; Maintain. Each step has a clear entry point and a
+                            clear exit. No ambiguity. No surprise invoices.
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </details>
 
             <!-- Language & Accessibility -->
-            <div class="structural-border bg-bone-white p-8 md:p-12">
-                <div class="flex flex-col items-center text-center">
-                    <h3 class="font-headers font-bold text-2xl mb-8" data-en="Language &amp; Accessibility Architecture"
-                        data-es="Arquitectura de Idioma y Accesibilidad">Language &amp; Accessibility Architecture</h3>
-                    <img src="language.svg" alt="Language and accessibility architecture diagram"
-                        class="w-full max-w-5xl mb-8 object-contain" style="background: transparent;">
-                    <p class="text-sm leading-relaxed max-w-3xl mb-8"
-                        data-en="Bilingual and accessible by design, not as an afterthought. Every element is keyboard-navigable. Every toggle is screen-reader friendly."
-                        data-es="Bilingüe y accesible por diseño, no como pensamiento posterior. Cada elemento es navegable por teclado y compatible con lectores de pantalla.">
-                        Bilingual and accessible by design, not as an afterthought. Every element is keyboard-navigable.
-                        Every toggle is screen-reader friendly.
-                    </p>
-                    <img src="language2.svg" alt="Language accessibility detail diagram"
-                        class="w-full max-w-5xl object-contain" style="background: transparent;">
+            <details class="structural-border bg-bone-white group">
+                <summary
+                    class="p-6 cursor-pointer font-headers font-bold text-base md:text-xl flex justify-between items-center hover:bg-light-pink transition"
+                    data-en="Language &amp; Accessibility Architecture"
+                    data-es="Arquitectura de Idioma y Accesibilidad">
+                    Language &amp; Accessibility Architecture
+                    <span
+                        class="text-primary-blue text-xl ml-4 flex-shrink-0 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <div class="px-6 pb-8 md:px-12 md:pb-12 border-t border-gray-dark/10 pt-6">
+                    <div class="flex flex-col items-center text-center">
+                        <picture class="w-full max-w-5xl mb-8">
+                            <source media="(min-width: 768px)" srcset="diagrams/language-overview.png">
+                            <img src="diagrams/language-overview-mobile.png"
+                                alt="Language and Accessibility architecture overview showing Website Hub branching to Bilingual Support, WCAG Compliance, Keyboard Navigation, Screen Reader Compatibility, and Inclusive Design"
+                                class="w-full object-contain rounded-lg">
+                        </picture>
+                        <p class="text-sm leading-relaxed max-w-3xl mb-8"
+                            data-en="Bilingual and accessible by design, not as an afterthought. Every element is keyboard-navigable. Every toggle is screen-reader friendly."
+                            data-es="Bilingüe y accesible por diseño, no como pensamiento posterior. Cada elemento es navegable por teclado y compatible con lectores de pantalla.">
+                            Bilingual and accessible by design, not as an afterthought. Every element is
+                            keyboard-navigable.
+                            Every toggle is screen-reader friendly.
+                        </p>
+                        <picture class="w-full max-w-5xl">
+                            <source media="(min-width: 768px)" srcset="diagrams/language-detail.png">
+                            <img src="diagrams/language-detail-mobile.png"
+                                alt="Language and Accessibility technical implementation detail showing three layers: User Interface (language toggle, font controls, contrast modes), Implementation (data attributes, ARIA labels, semantic HTML5), and Standards (WCAG 2.1 AA, ADA Section 508, i18n)"
+                                class="w-full object-contain rounded-lg">
+                        </picture>
+                    </div>
                 </div>
-            </div>
+            </details>
 
         </div>
     </section>
@@ -689,8 +733,13 @@
 
         <!-- Full landscape suspension bridge -->
         <div class="mt-20 px-6 max-w-7xl mx-auto">
-            <img src="suspension bridge.svg" alt="Suspension bridge landscape illustration"
-                class="w-full object-contain" style="max-height: 400px;">
+            <picture>
+                <source srcset="suspension bridge.svg" type="image/svg+xml">
+                <source srcset="suspension bridge.webp" type="image/webp">
+                <img src="suspension bridge.png"
+                    alt="Suspension bridge illustration symbolizing reliability and connection"
+                    class="w-full object-contain" style="max-height: 400px;">
+            </picture>
         </div>
 
     </section>
