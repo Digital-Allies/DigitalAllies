@@ -8,7 +8,7 @@
     <meta name="description"
         content="Digital Allies Video Training — Quick tutorials to help you manage your website without the jargon. Bilingual instructions for Bookings, eCommerce, and Design.">
     
-    <!-- Fonts -->
+<!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lexend+Deca:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -95,11 +95,12 @@
         .category-pill {
             cursor: pointer;
             transition: all 0.2s ease;
+            background-color: white;
         }
         .category-pill.active {
             background-color: #C5301A;
             color: white;
-            border-color: #C5301A;
+            border-color: #2D2D2D;
         }
 
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
@@ -112,7 +113,7 @@
     <div id="lang-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
     <!-- ============================================================
-         NAVIGATION (Synced with Index Page Anchors)
+         NAVIGATION (Fixed Spacing & Home Anchors)
     ============================================================= -->
     <nav class="structural-border bg-bone-white sticky top-0 z-50" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -125,19 +126,20 @@
                 <span class="font-headers font-bold text-xl tracking-wide">Digital Allies</span>
             </a>
 
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-4 lg:space-x-8">
                 <!-- Nav links (Synced with index page sections) -->
-                <div class="hidden md:flex items-center space-x-5 text-xs font-bold">
-                    <a href="index.html#departments" class="hover:text-primary-blue transition" data-en="Services" data-es="Servicios">Services</a>
-                    <a href="index.html#pricing" class="hover:text-primary-blue transition" data-en="Pricing" data-es="Precios">Pricing</a>
-                    <a href="index.html#field-notes" class="hover:text-primary-blue transition" data-en="Reviews" data-es="Reseñas">Reviews</a>
-                    <a href="index.html#faq" class="hover:text-primary-blue transition" data-en="FAQ" data-es="FAQ">FAQ</a>
-                    <a href="video-training.html" class="text-signal-red transition" data-en="Video Training" data-es="Video-Tutoriales">Video Training</a>
-                    <a href="index.html#contact" class="hover:text-primary-blue transition" data-en="Contact" data-es="Contacto">Contact</a>
+                <!-- Added space-x-4 for md screens to prevent wrapping -->
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6 text-xs font-bold">
+                    <a href="index.html#departments" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Services" data-es="Servicios">Services</a>
+                    <a href="index.html#pricing" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Pricing" data-es="Precios">Pricing</a>
+                    <a href="index.html#field-notes" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Reviews" data-es="Reseñas">Reviews</a>
+                    <a href="index.html#faq" class="hover:text-primary-blue transition whitespace-nowrap" data-en="FAQ" data-es="FAQ">FAQ</a>
+                    <a href="video-training.html" class="text-signal-red transition whitespace-nowrap underline underline-offset-4" data-en="Video Training" data-es="Video-Tutoriales">Video Training</a>
+                    <a href="index.html#contact" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Contact" data-es="Contacto">Contact</a>
                 </div>
 
                 <!-- Language switcher -->
-                <div class="flex items-center structural-border overflow-hidden" role="group">
+                <div class="flex items-center structural-border overflow-hidden flex-shrink-0" role="group">
                     <button id="lang-en" onclick="LC.toggleLanguage('en')" class="px-3 py-1.5 text-xs font-bold transition hover:bg-light-pink lang-active">EN</button>
                     <div class="w-px h-5 bg-gray-dark"></div>
                     <button id="lang-es" onclick="LC.toggleLanguage('es')" class="px-3 py-1.5 text-xs font-bold transition hover:bg-light-pink">ES</button>
@@ -172,11 +174,11 @@
     ============================================================= -->
     <section class="max-w-7xl mx-auto px-6 mb-12">
         <div class="flex flex-wrap gap-3 justify-center">
-            <button class="category-pill active structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider bg-white" data-en="All Modules" data-es="Todos los Módulos">All Modules</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider bg-white" data-en="Bookings" data-es="Reservas">Bookings</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider bg-white" data-en="Editor Basics" data-es="Básicos del Editor">Editor Basics</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider bg-white" data-en="eCommerce" data-es="eCommerce">eCommerce</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider bg-white" data-en="Widgets" data-es="Widgets">Widgets</button>
+            <button class="category-pill active structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="All Modules" data-es="Todos los Módulos">All Modules</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="Bookings" data-es="Reservas">Bookings</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="Editor Basics" data-es="Básicos del Editor">Editor Basics</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="eCommerce" data-es="eCommerce">eCommerce</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="Widgets" data-es="Widgets">Widgets</button>
         </div>
     </section>
 
