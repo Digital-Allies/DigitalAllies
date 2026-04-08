@@ -112,23 +112,31 @@
     <div id="lang-announcer" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
     <!-- ============================================================
-         NAVIGATION (Synced)
+         NAVIGATION (Synced with Index Page Anchors)
     ============================================================= -->
     <nav class="structural-border bg-bone-white sticky top-0 z-50" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center space-x-3">
+            
+            <a href="index.html" class="flex items-center space-x-3">
                 <div class="relative flex items-center justify-center w-5 h-5">
                     <div class="absolute w-4 h-4 bg-primary-blue rounded-full opacity-25 fab-ring"></div>
                     <div class="w-3 h-3 bg-primary-blue rounded-full brand-pulse structural-border"></div>
                 </div>
                 <span class="font-headers font-bold text-xl tracking-wide">Digital Allies</span>
             </a>
+
             <div class="flex items-center space-x-6">
+                <!-- Nav links (Synced with index page sections) -->
                 <div class="hidden md:flex items-center space-x-5 text-xs font-bold">
-                    <a href="/#departments" class="hover:text-primary-blue transition" data-en="Services" data-es="Servicios">Services</a>
-                    <a href="/#pricing" class="hover:text-primary-blue transition" data-en="Pricing" data-es="Precios">Pricing</a>
-                    <a href="/#contact" class="hover:text-primary-blue transition" data-en="Contact" data-es="Contacto">Contact</a>
+                    <a href="index.html#departments" class="hover:text-primary-blue transition" data-en="Services" data-es="Servicios">Services</a>
+                    <a href="index.html#pricing" class="hover:text-primary-blue transition" data-en="Pricing" data-es="Precios">Pricing</a>
+                    <a href="index.html#field-notes" class="hover:text-primary-blue transition" data-en="Reviews" data-es="Reseñas">Reviews</a>
+                    <a href="index.html#faq" class="hover:text-primary-blue transition" data-en="FAQ" data-es="FAQ">FAQ</a>
+                    <a href="video-training.html" class="text-signal-red transition" data-en="Video Training" data-es="Video-Tutoriales">Video Training</a>
+                    <a href="index.html#contact" class="hover:text-primary-blue transition" data-en="Contact" data-es="Contacto">Contact</a>
                 </div>
+
+                <!-- Language switcher -->
                 <div class="flex items-center structural-border overflow-hidden" role="group">
                     <button id="lang-en" onclick="LC.toggleLanguage('en')" class="px-3 py-1.5 text-xs font-bold transition hover:bg-light-pink lang-active">EN</button>
                     <div class="w-px h-5 bg-gray-dark"></div>
@@ -184,7 +192,6 @@
                 <span data-en="Dept. of Cooperation: Bookings" data-es="Depto. de Cooperación: Reservas">Dept. of Cooperation: Bookings</span>
             </h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Video Item -->
                 <div class="video-card structural-border p-5">
                     <div class="video-container structural-border mb-4">
                         <iframe src="https://player.vimeo.com/video/1166427885" allow="fullscreen"></iframe>
@@ -192,7 +199,6 @@
                     <h4 class="font-headers font-bold text-sm mb-2" data-en="Add and Configure Bookings" data-es="Agregar y Configurar Reservas">Add and Configure Bookings</h4>
                     <p class="text-xs leading-relaxed text-gray-600" data-en="How to add and configure the primary Bookings widget." data-es="Cómo agregar y configurar el widget de Reservas principal.">How to add and configure the primary Bookings widget.</p>
                 </div>
-                <!-- Video Item -->
                 <div class="video-card structural-border p-5">
                     <div class="video-container structural-border mb-4">
                         <iframe src="https://player.vimeo.com/video/1166426741" allow="fullscreen"></iframe>
@@ -200,7 +206,6 @@
                     <h4 class="font-headers font-bold text-sm mb-2" data-en="Customize Booking Questions" data-es="Personalizar Preguntas de Reserva">Customize Booking Questions</h4>
                     <p class="text-xs leading-relaxed text-gray-600" data-en="Gathering the specific data you need from clients." data-es="Recopilación de los datos específicos que necesitas de los clientes.">Gathering the specific data you need from clients.</p>
                 </div>
-                <!-- Video Item -->
                 <div class="video-card structural-border p-5">
                     <div class="video-container structural-border mb-4">
                         <iframe src="https://player.vimeo.com/video/1166426148" allow="fullscreen"></iframe>
@@ -208,82 +213,20 @@
                     <h4 class="font-headers font-bold text-sm mb-2" data-en="Timezone Syncing" data-es="Sincronización de Zona Horaria">Timezone Syncing</h4>
                     <p class="text-xs leading-relaxed text-gray-600" data-en="Ensure your booking slots match your local timezone." data-es="Asegúrate de que tus espacios de reserva coincidan con tu zona horaria local.">Ensure your booking slots match your local timezone.</p>
                 </div>
-                <!-- Video Item -->
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166132311" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Scheduling Types" data-es="Tipos de Programación">Scheduling Types</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Round Robin, Collective, and Fixed Hosts explained." data-es="Explicación de Round Robin, Colectivo y Anfitriones Fijos.">Round Robin, Collective, and Fixed Hosts explained.</p>
-                </div>
-                <!-- Video Item -->
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166132348" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Host Group Sessions" data-es="Organizar Sesiones Grupales">Host Group Sessions</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Setting up events for multiple participants." data-es="Configuración de eventos para múltiples participantes.">Setting up events for multiple participants.</p>
-                </div>
-                <!-- Video Item -->
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166132285" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Require Confirmation" data-es="Requerir Confirmación">Require Confirmation</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Manually approve bookings before they are finalized." data-es="Aprobar manualmente las reservas antes de que se finalicen.">Manually approve bookings before they are finalized.</p>
-                </div>
             </div>
         </div>
 
-        <!-- SECTION: EDITOR BASICS -->
-        <div class="mb-20">
-            <h3 class="font-headers text-2xl font-bold mb-8 flex items-center gap-3">
-                <i data-lucide="layout" class="w-6 h-6 text-signal-red"></i>
-                <span data-en="The Design Bureau: Basic Ops" data-es="El Buró de Diseño: Ops Básicas">The Design Bureau: Basic Ops</span>
-            </h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Video Item -->
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166132263" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Calendar Event Names" data-es="Nombres de Eventos del Calendario">Calendar Event Names</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Customize how your events appear on the calendar." data-es="Personaliza cómo aparecen tus eventos en el calendario.">Customize how your events appear on the calendar.</p>
-                </div>
-                <!-- Video Item -->
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1138710958" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Editor 2.0 Overview" data-es="Resumen del Editor 2.0">Editor 2.0 Overview</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Navigating the modern website building interface." data-es="Navegando por la interfaz moderna de construcción de sitios web.">Navigating the modern website building interface.</p>
-                </div>
-                <!-- Video Item -->
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1138592684" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Page Management" data-es="Gestión de Páginas">Page Management</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="How to add, remove, and hide pages from your menu." data-es="Cómo agregar, eliminar y ocultar páginas de tu menú.">How to add, remove, and hide pages from your menu.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION: ADDITIONAL ARCHIVE (THE REST) -->
+        <!-- SECTION: ADDITIONAL ARCHIVE -->
         <div class="mb-20">
             <h3 class="font-headers text-2xl font-bold mb-8 flex items-center gap-3">
                 <i data-lucide="archive" class="w-6 h-6 text-primary-blue"></i>
                 <span data-en="The Tactical Archive" data-es="El Archivo Táctico">The Tactical Archive</span>
             </h3>
-            <p class="text-xs mb-8 italic" data-en="Below are more specialized tutorials from our vault." data-es="A continuación se presentan tutoriales más especializados de nuestra bóveda.">Below are more specialized tutorials from our vault.</p>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <!-- Generic Item Loop for "The Rest" -->
                 <script>
                     const extraVideos = [
                         '1166132372', '1166132361', '1166132330', '1166132251', '1166132235', 
-                        '1166132219', '1166132189', '1166132161', '1166132126', '1165824245',
-                        '1165824219', '1165824209', '1165824198', '1164464066', '1138290003',
-                        '1138286579', '1138283006', '1138277739', '1138265689', '1138258398'
+                        '1166132219', '1166132189', '1166132161', '1166132126', '1165824245'
                     ];
                     extraVideos.forEach(id => {
                         document.write(`
@@ -297,12 +240,6 @@
                     });
                 </script>
             </div>
-            <div class="mt-8 text-center">
-                <button class="px-8 py-3 bg-bone-white text-gray-dark font-bold structural-border hover:bg-light-pink transition text-sm"
-                    data-en="[ Load Complete Archive ]" data-es="[ Cargar Archivo Completo ]">
-                    [ Load Complete Archive ]
-                </button>
-            </div>
         </div>
 
     </main>
@@ -313,7 +250,7 @@
     <footer id="contact" class="bg-gray-dark text-white py-24 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
             <div>
-                <a href="/" class="flex items-center space-x-3 mb-10">
+                <a href="index.html" class="flex items-center space-x-3 mb-10">
                     <div class="relative flex items-center justify-center w-5 h-5">
                         <div class="absolute w-4 h-4 bg-white rounded-full opacity-20 fab-ring"></div>
                         <div class="w-3 h-3 bg-white rounded-full brand-pulse" style="border: 1px solid rgba(255,255,255,0.4);"></div>
@@ -321,15 +258,8 @@
                     <span class="font-headers font-bold text-2xl tracking-wide text-white">Digital Allies</span>
                 </a>
                 <h2 class="font-headers text-3xl font-bold mb-5" data-en="The Command Center" data-es="El Centro de Mando">The Command Center</h2>
-                <p class="text-xs border-l-2 border-signal-red pl-4 text-white/65 leading-relaxed"
-                    data-en="I am historically easy to reach. I live in Kingman. If you call, I answer. It is a very avant-garde concept called &lsquo;Doing My Job.&rsquo;"
-                    data-es="Soy históricamente fácil de contactar. Vivo en Kingman. Si llamas, contesto. Es un concepto muy vanguardista llamado &lsquo;Hacer mi trabajo.&rsquo;">
-                    I am historically easy to reach. I live in Kingman. If you call, I answer. It is a very avant-garde concept called &lsquo;Doing My Job.&rsquo;
-                </p>
                 <div class="mt-12 pt-6 border-t border-white/10 text-xs text-white/50">
-                    <p data-en="&copy; 2026 Digital Allies. Based in Kingman, AZ." data-es="&copy; 2026 Digital Allies. Con sede en Kingman, AZ.">
-                        &copy; 2026 Digital Allies. Based in Kingman, AZ.
-                    </p>
+                    <p data-en="&copy; 2026 Digital Allies. Based in Kingman, AZ." data-es="&copy; 2026 Digital Allies. Con sede en Kingman, AZ.">&copy; 2026 Digital Allies. Based in Kingman, AZ.</p>
                 </div>
             </div>
             <div class="bg-bone-white p-8 structural-border text-gray-dark self-start">
@@ -343,7 +273,7 @@
     </footer>
 
     <!-- FAB -->
-    <a href="/#contact" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-bone-white structural-border py-2.5 px-4 rounded-full shadow-md hover:bg-light-pink transition">
+    <a href="index.html#contact" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-bone-white structural-border py-2.5 px-4 rounded-full shadow-md hover:bg-light-pink transition">
         <span class="text-xs font-bold" data-en="Need a strategic ally?" data-es="¿Necesitas un aliado?">Need a strategic ally?</span>
         <div class="relative flex items-center justify-center w-4 h-4 flex-shrink-0">
             <div class="absolute w-4 h-4 bg-signal-red rounded-full opacity-30 fab-ring"></div>
