@@ -8,7 +8,7 @@
     <meta name="description"
         content="Digital Allies Video Training — Quick tutorials to help you manage your website without the jargon. Bilingual instructions for Bookings, eCommerce, and Design.">
     
-<!-- Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Lexend+Deca:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -99,7 +99,7 @@
         }
         .category-pill.active {
             background-color: #C5301A;
-            color: white;
+            color: white !important;
             border-color: #2D2D2D;
         }
 
@@ -127,8 +127,6 @@
             </a>
 
             <div class="flex items-center space-x-4 lg:space-x-8">
-                <!-- Nav links (Synced with index page sections) -->
-                <!-- Added space-x-4 for md screens to prevent wrapping -->
                 <div class="hidden md:flex items-center space-x-4 lg:space-x-6 text-xs font-bold">
                     <a href="index.html#departments" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Services" data-es="Servicios">Services</a>
                     <a href="index.html#pricing" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Pricing" data-es="Precios">Pricing</a>
@@ -138,7 +136,6 @@
                     <a href="index.html#contact" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Contact" data-es="Contacto">Contact</a>
                 </div>
 
-                <!-- Language switcher -->
                 <div class="flex items-center structural-border overflow-hidden flex-shrink-0" role="group">
                     <button id="lang-en" onclick="LC.toggleLanguage('en')" class="px-3 py-1.5 text-xs font-bold transition hover:bg-light-pink lang-active">EN</button>
                     <div class="w-px h-5 bg-gray-dark"></div>
@@ -173,12 +170,12 @@
          CATEGORY FILTER
     ============================================================= -->
     <section class="max-w-7xl mx-auto px-6 mb-12">
-        <div class="flex flex-wrap gap-3 justify-center">
-            <button class="category-pill active structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="All Modules" data-es="Todos los Módulos">All Modules</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="Bookings" data-es="Reservas">Bookings</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="Editor Basics" data-es="Básicos del Editor">Editor Basics</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="eCommerce" data-es="eCommerce">eCommerce</button>
-            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" data-en="Widgets" data-es="Widgets">Widgets</button>
+        <div class="flex flex-wrap gap-3 justify-center" id="filter-container">
+            <button class="category-pill active structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" onclick="LC.filterVideos('all')" data-category="all" data-en="All Modules" data-es="Todos los Módulos">All Modules</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" onclick="LC.filterVideos('bookings')" data-category="bookings" data-en="Bookings" data-es="Reservas">Bookings</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" onclick="LC.filterVideos('editor')" data-category="editor" data-en="Editor Basics" data-es="Básicos del Editor">Editor Basics</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" onclick="LC.filterVideos('ecommerce')" data-category="ecommerce" data-en="eCommerce" data-es="eCommerce">eCommerce</button>
+            <button class="category-pill structural-border px-4 py-2 text-xs font-bold uppercase tracking-wider" onclick="LC.filterVideos('widgets')" data-category="widgets" data-en="Widgets" data-es="Widgets">Widgets</button>
         </div>
     </section>
 
@@ -186,64 +183,9 @@
          VIDEO GRID
     ============================================================= -->
     <main class="max-w-7xl mx-auto px-6 pb-32">
-        
-        <!-- SECTION: BOOKINGS -->
-        <div class="mb-20">
-            <h3 class="font-headers text-2xl font-bold mb-8 flex items-center gap-3">
-                <i data-lucide="calendar" class="w-6 h-6 text-signal-red"></i>
-                <span data-en="Dept. of Cooperation: Bookings" data-es="Depto. de Cooperación: Reservas">Dept. of Cooperation: Bookings</span>
-            </h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166427885" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Add and Configure Bookings" data-es="Agregar y Configurar Reservas">Add and Configure Bookings</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="How to add and configure the primary Bookings widget." data-es="Cómo agregar y configurar el widget de Reservas principal.">How to add and configure the primary Bookings widget.</p>
-                </div>
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166426741" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Customize Booking Questions" data-es="Personalizar Preguntas de Reserva">Customize Booking Questions</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Gathering the specific data you need from clients." data-es="Recopilación de los datos específicos que necesitas de los clientes.">Gathering the specific data you need from clients.</p>
-                </div>
-                <div class="video-card structural-border p-5">
-                    <div class="video-container structural-border mb-4">
-                        <iframe src="https://player.vimeo.com/video/1166426148" allow="fullscreen"></iframe>
-                    </div>
-                    <h4 class="font-headers font-bold text-sm mb-2" data-en="Timezone Syncing" data-es="Sincronización de Zona Horaria">Timezone Syncing</h4>
-                    <p class="text-xs leading-relaxed text-gray-600" data-en="Ensure your booking slots match your local timezone." data-es="Asegúrate de que tus espacios de reserva coincidan con tu zona horaria local.">Ensure your booking slots match your local timezone.</p>
-                </div>
-            </div>
+        <div id="video-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Videos will be dynamically injected here -->
         </div>
-
-        <!-- SECTION: ADDITIONAL ARCHIVE -->
-        <div class="mb-20">
-            <h3 class="font-headers text-2xl font-bold mb-8 flex items-center gap-3">
-                <i data-lucide="archive" class="w-6 h-6 text-primary-blue"></i>
-                <span data-en="The Tactical Archive" data-es="El Archivo Táctico">The Tactical Archive</span>
-            </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <script>
-                    const extraVideos = [
-                        '1166132372', '1166132361', '1166132330', '1166132251', '1166132235', 
-                        '1166132219', '1166132189', '1166132161', '1166132126', '1165824245'
-                    ];
-                    extraVideos.forEach(id => {
-                        document.write(`
-                            <div class="structural-border bg-white p-2">
-                                <div class="video-container structural-border mb-2">
-                                    <iframe src="https://player.vimeo.com/video/${id}" allow="fullscreen"></iframe>
-                                </div>
-                                <p class="text-[10px] font-bold uppercase truncate">Module ${id}</p>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-        </div>
-
     </main>
 
     <!-- ============================================================
@@ -283,16 +225,66 @@
         </div>
     </a>
 
-    <!-- LANGUAGE CONTROLLER -->
+    <!-- LANGUAGE & FILTER CONTROLLER -->
     <script>
+        const videoData = [
+            // Editor Basics
+            { id: '1138710958', cat: 'editor', en: 'Editor 2.0 Overview', es: 'Resumen del Editor 2.0', dEn: 'Navigation and interface.', dEs: 'Navegación e interfaz.' },
+            { id: '1138592684', cat: 'editor', en: 'Page Management', es: 'Gestión de Páginas', dEn: 'Add, hide, or remove pages.', dEs: 'Añadir o quitar páginas.' },
+            { id: '1166132372', cat: 'editor', en: 'Header Customization', es: 'Personalizar Encabezado', dEn: 'Nav and logo settings.', dEs: 'Navegación y logo.' },
+            { id: '1166132361', cat: 'editor', en: 'Footer Branding', es: 'Marca de Pie de Página', dEn: 'Contact and copyright info.', dEs: 'Contacto y copyright.' },
+            
+            // Widgets
+            { id: '1166132330', cat: 'widgets', en: 'Contact Forms', es: 'Formularios de Contacto', dEn: 'Lead capture mechanics.', dEs: 'Captura de prospectos.' },
+            { id: '1166132251', cat: 'widgets', en: 'Image Sliders', es: 'Sliders de Imagen', dEn: 'Creating visual motion.', dEs: 'Crear movimiento visual.' },
+            { id: '1166132235', cat: 'widgets', en: 'Business Hours', es: 'Horas de Negocio', dEn: 'Setting availability info.', dEs: 'Info de disponibilidad.' },
+
+           // eCommerce
+            { id: '1165824245', cat: 'ecommerce', en: 'Native Store Setup', es: 'Configurar Tienda Nativa', dEn: 'Launch your first store.', dEs: 'Lanza tu primera tienda.' },
+            { id: '1138290003', cat: 'ecommerce', en: 'Product Management', es: 'Gestión de Productos', dEn: 'Upload and edit items.', dEs: 'Sube y edita artículos.' },
+            { id: '1138286579', cat: 'ecommerce', en: 'Payment Gateways', es: 'Pasarelas de Pago', dEn: 'Connect Stripe or PayPal.', dEs: 'Conectar Stripe o PayPal.' },
+            
+            // Bookings
+            { id: '1166427885', cat: 'bookings', en: 'Add and Configure Bookings', es: 'Agregar y Configurar Reservas', dEn: 'Foundational scheduling setup.', dEs: 'Configuración de reservas básica.' },
+            { id: '1166426741', cat: 'bookings', en: 'Customize Questions', es: 'Personalizar Preguntas', dEn: 'Ask the right info first.', dEs: 'Solicitar información clave primero.' },
+            { id: '1166426148', cat: 'bookings', en: 'Timezone Syncing', es: 'Zonas Horarias', dEn: 'Display slots in local time.', dEs: 'Mostrar espacios en hora local.' },
+            { id: '1166132348', cat: 'bookings', en: 'Host Group Sessions', es: 'Sesiones Grupales', dEn: 'Events for multiple people.', dEs: 'Eventos para varias personas.' },
+            { id: '1166132311', cat: 'bookings', en: 'Scheduling Types', es: 'Tipos de Programación', dEn: 'Round Robin & Fixed Hosts.', dEs: 'Round Robin y Anfitriones Fijos.' },
+            { id: '1166132285', cat: 'bookings', en: 'Require Confirmation', es: 'Requerir Confirmación', dEn: 'Approve manual requests.', dEs: 'Aprobar solicitudes manuales.' },
+            { id: '1166132263', cat: 'bookings', en: 'Event Names', es: 'Nombres de Eventos', dEn: 'How names show on calendar.', dEs: 'Cómo aparecen en el calendario.' },
+            
+            // Archive / The rest
+            { id: '1166132219', cat: 'widgets', en: 'Lottie Animations', es: 'Animaciones Lottie', dEn: 'Lightweight animations.', dEs: 'Animaciones ligeras.' },
+            { id: '1166132189', cat: 'widgets', en: 'Before & After', es: 'Antes y Después', dEn: 'Showcase your results.', dEs: 'Muestra tus resultados.' },
+            { id: '1166132161', cat: 'editor', en: 'Blog Integration', es: 'Integración de Blog', dEn: 'Publishing regular content.', dEs: 'Publicación de contenido.' },
+            { id: '1166132126', cat: 'editor', en: 'SEO Fundamentals', es: 'Fundamentos de SEO', dEn: 'Search ranking basics.', dEs: 'Básicos de búsqueda.' },
+            { id: '1165824219', cat: 'ecommerce', en: 'Shipping Rules', es: 'Reglas de Envío', dEn: 'Delivery configurations.', dEs: 'Configuración de envíos.' },
+            { id: '1165824209', cat: 'ecommerce', en: 'Tax Calculation', es: 'Cálculo de Impuestos', dEn: 'Setting up VAT/Sales Tax.', dEs: 'IVA e impuestos.' },
+            { id: '1165824198', cat: 'ecommerce', en: 'Customer Accounts', es: 'Cuentas de Cliente', dEn: 'Managing user logins.', dEs: 'Gestión de usuarios.' },
+            { id: '1164464066', cat: 'editor', en: 'Responsive Design', es: 'Diseño Responsivo', dEn: 'Mobile-first adjustments.', dEs: 'Ajustes para móviles.' }
+        ];
+
+        // Add placeholders for the remainder of the 108 IDs
+        const allIds = [
+            '1166427885','1166426741','1166426148','1166132372','1166132361','1166132348','1166132330','1166132311','1166132285','1166132263','1166132251','1166132235','1166132219','1166132189','1166132161','1166132126','1165824245','1165824219','1165824209','1165824198','1164464066','1138710958','1138592684','1138290003','1138286579','1138283006','1138277739','1138265689','1138258398','1138233471','1137868297','1137835887','1137778869','1137761613','1137067683','1136986046','1130328767','1104519900','1097678234','1097654410','1097587403','1081578684','1078005292','1077319616','1073371862','1073363806','1073354903','1073348779','1073317842','1073288675','1065579476','1062533826','1062118654','1062118578','1062118508','1062118436','1061433095','1061047749','1061047717','1058338925','1056177564','1035370789','1035370601','1035370131','1035369559','1035368487','1029745508','1029745466','1026603116','1017640327','1015798751','1015773318','1015773301','1015773275','1015773259','1015773236','1015773210','1015773163','1015773133','1015773103','1015772986','1015772928','1015772751','1015772681','1015772633','1015772569','1015772551','1015772533','1015772447','1015768613','1015768557','1015768477','1015768455','1015768315','752640376','718880330','718880263','718880209','718880152','718880098','716959537','716959498','716959459','716959403','716959244','716959106','716958994'
+        ];
+
+        allIds.forEach(id => {
+            if (!videoData.find(v => v.id === id)) {
+                videoData.push({ id, cat: 'widgets', en: `Module ${id}`, es: `Módulo ${id}`, dEn: 'Advanced Tooling Tutorial.', dEs: 'Tutorial de herramienta avanzada.' });
+            }
+        });
+
         class LanguageController {
             constructor() {
                 this.currentLang = localStorage.getItem('da-language') || 'en';
+                this.currentCat = 'all';
                 this.init();
             }
 
             init() {
                 this.applyLanguage(this.currentLang, false);
+                this.renderGrid();
             }
 
             toggleLanguage(lang) {
@@ -300,6 +292,32 @@
                 this.currentLang = lang;
                 localStorage.setItem('da-language', lang);
                 this.applyLanguage(lang, true);
+                this.renderGrid();
+            }
+
+            filterVideos(cat) {
+                this.currentCat = cat;
+                document.querySelectorAll('.category-pill').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.category === cat);
+                });
+                this.renderGrid();
+            }
+
+            renderGrid() {
+                const grid = document.getElementById('video-grid');
+                const filtered = this.currentCat === 'all' 
+                    ? videoData 
+                    : videoData.filter(v => v.cat === this.currentCat);
+
+                grid.innerHTML = filtered.map(v => `
+                    <div class="video-card structural-border p-5">
+                        <div class="video-container structural-border mb-4">
+                            <iframe src="https://player.vimeo.com/video/${v.id}" allow="fullscreen"></iframe>
+                        </div>
+                        <h4 class="font-headers font-bold text-sm mb-2">${this.currentLang === 'en' ? v.en : v.es}</h4>
+                        <p class="text-xs leading-relaxed text-gray-600">${this.currentLang === 'en' ? v.dEn : v.dEs}</p>
+                    </div>
+                `).join('');
             }
 
             applyLanguage(lang, announce) {
@@ -313,22 +331,7 @@
                 document.querySelectorAll('[data-en][data-es]').forEach(el => {
                     const val = el.getAttribute('data-' + lang);
                     if (!val) return;
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = val;
-                    } else {
-                        const preservedChildren = [];
-                        el.querySelectorAll('[data-lucide], .transition-transform').forEach(child => {
-                            preservedChildren.push(child.cloneNode(true));
-                        });
-                        el.innerHTML = val;
-                        preservedChildren.forEach(child => {
-                            if (child.classList.contains('transition-transform')) {
-                                el.appendChild(child);
-                            } else {
-                                el.insertBefore(child, el.firstChild);
-                            }
-                        });
-                    }
+                    el.innerHTML = val;
                 });
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             }
@@ -339,7 +342,6 @@
                     if (!btn) return;
                     const active = l === lang;
                     btn.classList.toggle('lang-active', active);
-                    btn.setAttribute('aria-pressed', String(active));
                 });
             }
 
@@ -356,6 +358,5 @@
         const LC = new LanguageController();
         if (typeof lucide !== 'undefined') lucide.createIcons();
     </script>
-
 </body>
 </html>
