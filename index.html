@@ -208,17 +208,31 @@
     <!-- ============================================================
          NAVIGATION
     ============================================================= -->
-   <div class="hidden md:flex items-center space-x-5 text-xs font-bold">
-                    <a href="index.html#departments" class="hover:text-primary-blue transition" data-en="Services" data-es="Servicios">Services</a>
-                    <a href="index.html#pricing" class="hover:text-primary-blue transition" data-en="Pricing" data-es="Precios">Pricing</a>
-                    <a href="index.html#field-notes" class="hover:text-primary-blue transition" data-en="Reviews" data-es="Reseñas">Reviews</a>
-                    <a href="index.html#faq" class="hover:text-primary-blue transition" data-en="FAQ" data-es="FAQ">FAQ</a>
-                    <a href="video-training.html" class="text-signal-red transition" data-en="Video Training" data-es="Video-Tutoriales">Video Training</a>
-                    <a href="index.html#contact" class="hover:text-primary-blue transition" data-en="Contact" data-es="Contacto">Contact</a>
+  <nav class="structural-border bg-bone-white sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="relative flex items-center justify-center w-5 h-5">
+                    <div class="absolute w-4 h-4 bg-primary-blue rounded-full opacity-25 fab-ring"></div>
+                    <div class="w-3 h-3 bg-primary-blue rounded-full brand-pulse structural-border"></div>
+                </div>
+                <span class="font-headers font-bold text-xl tracking-wide">Digital Allies</span>
+            </a>
+
+            <div class="flex items-center space-x-4 lg:space-x-8">
+                <!-- Nav links (Synced with index page sections) -->
+                <!-- Added space-x-4 for md screens to prevent wrapping -->
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-6 text-xs font-bold">
+                    <a href="index.html#departments" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Services" data-es="Servicios">Services</a>
+                    <a href="index.html#pricing" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Pricing" data-es="Precios">Pricing</a>
+                    <a href="index.html#field-notes" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Reviews" data-es="Reseñas">Reviews</a>
+                    <a href="index.html#faq" class="hover:text-primary-blue transition whitespace-nowrap" data-en="FAQ" data-es="FAQ">FAQ</a>
+                    <a href="video-training.html" class="text-signal-red transition whitespace-nowrap underline underline-offset-4" data-en="Video Training" data-es="Video-Tutoriales">Video Training</a>
+                    <a href="index.html#contact" class="hover:text-primary-blue transition whitespace-nowrap" data-en="Contact" data-es="Contacto">Contact</a>
                 </div>
 
                 <!-- Language switcher -->
-                <div class="flex items-center structural-border overflow-hidden" role="group">
+                <div class="flex items-center structural-border overflow-hidden flex-shrink-0" role="group">
                     <button id="lang-en" onclick="LC.toggleLanguage('en')" class="px-3 py-1.5 text-xs font-bold transition hover:bg-light-pink lang-active">EN</button>
                     <div class="w-px h-5 bg-gray-dark"></div>
                     <button id="lang-es" onclick="LC.toggleLanguage('es')" class="px-3 py-1.5 text-xs font-bold transition hover:bg-light-pink">ES</button>
