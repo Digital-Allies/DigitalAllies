@@ -1,5 +1,3 @@
-import re
-import glob
 
 pages_data = {
     'learn/dept-cooperation.html': {
