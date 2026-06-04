@@ -200,19 +200,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 information for things like language selection, and provide anonymized tracking data to understand how
                 visitors use the site.</p>
 
-            <h3 class="font-headers font-bold text-lg">Cookies I Use</h3>
-            <p class="text-sm leading-relaxed">This website uses the following types of cookies:</p>
+            <h3 class="font-headers font-bold text-lg">Cookies and Local Storage</h3>
+            <p class="text-sm leading-relaxed">This website uses the following storage mechanisms. Note that <strong>da-language</strong> is a localStorage item, not a traditional cookie, meaning it is only stored locally on your device.</p>
 
             <div class="structural-border overflow-hidden my-4">
                 <div class="grid grid-cols-3 bg-gray-dark text-white text-xs font-bold p-3">
-                    <span>Cookie</span>
+                    <span>Name</span>
                     <span>Purpose</span>
-                    <span>Duration</span>
+                    <span>Type / Duration</span>
                 </div>
                 <div class="grid grid-cols-3 text-xs p-3 border-b border-gray-dark/10">
                     <span class="font-bold">da-language</span>
                     <span>Stores your language preference (EN/ES)</span>
-                    <span>Persistent (localStorage)</span>
+                    <span>localStorage / Persistent</span>
                 </div>
             </div>
 
@@ -322,7 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <form action="https://formsubmit.co/contact@digitalallies.net" method="POST" class="space-y-4"
                     novalidate>
                     <input type="hidden" name="_subject" value="New inquiry from Digital Allies">
-                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_captcha" value="true">
                     <input type="hidden" name="_next" value="https://digitalallies.net/">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_autoresponse"
@@ -430,7 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         el.querySelectorAll('[data-lucide], .transition-transform').forEach(child => {
                             preservedChildren.push(child.cloneNode(true));
                         });
-                        el.innerHTML = val;
+                        el.textContent = val;
                         preservedChildren.forEach(child => {
                             if (child.classList.contains('transition-transform')) {
                                 el.appendChild(child);

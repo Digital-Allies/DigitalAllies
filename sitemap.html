@@ -28,22 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
 
-    <!-- Original PRO Sitemap toggle script (preserved) -->
-    <script type="text/javascript">
-        function el_t(el, cl) { if (el) el.classList.toggle(cl); }
-        window.addEventListener('load', (event) => {
-            let alh = document.getElementsByClassName('lhead');
-            for (let lh of alh) {
-                lh.addEventListener('click', function (event) {
-                    el_t(this, 'collapse');
-                    el_t(this.nextElementSibling, 'hide');
-                    if (this.nextElementSibling && this.nextElementSibling.nextElementSibling) {
-                        el_t(this.nextElementSibling.nextElementSibling, 'hide');
-                    }
-                });
-            }
-        });
-    </script>
+
 
     <style>
         * {
@@ -400,38 +385,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: rgba(255, 255, 255, 0.35);
         }
 
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        .lang-switcher {
+        .site-footer .lang-switcher {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             margin-left: 1rem;
+            border: none;
+            overflow: visible;
         }
 
-        .lang-btn {
+        .site-footer .lang-btn {
             background: none;
             border: none;
             color: rgba(255, 255, 255, 0.6);
             cursor: pointer;
             font-size: 0.75rem;
+            padding: 0;
         }
 
-        .lang-active {
-            color: white;
+        .site-footer .lang-active {
+            color: white !important;
+            background: none !important;
             font-weight: 700;
         }
 
-        .lang-divider {
+        .site-footer .lang-divider {
             width: 1px;
             height: 10px;
             background: rgba(255, 255, 255, 0.3);
@@ -586,12 +564,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="lpage">
                             <a href="https://digitalallies.net/learn/ada-compliance"
                                 data-en="ADA Compliance for Websites — Accessible Web Design · Digital Allies"
-                                data-es="ADA Compliance for Websites — Accessible Web Design · Digital Allies"
+                                data-es="Cumplimiento de la ADA para Sitios Web — Diseño Web Accesible · Digital Allies"
                                 title="ADA Compliance for Websites — Accessible Web Design · Digital Allies">ADA
                                 Compliance for Websites — Accessible Web Design · Digital Allies</a>
                             <br /><small
                                 data-en="Website accessibility isn't just the right thing to do — it's a legal requirement and a business advantage. WCAG 2.1 AA, ADA compliance, and what it actually means for small businesses in Kingman and beyond."
-                                data-es="Website accessibility isn't just the right thing to do — it's a legal requirement and a business advantage. WCAG 2.1 AA, ADA compliance, and what it actually means for small businesses in Kingman and beyond.">Website
+                                data-es="La accesibilidad del sitio web no es solo lo correcto, es un requisito legal y una ventaja comercial. WCAG 2.1 AA, cumplimiento de la ADA y lo que realmente significa para las pequeñas empresas en Kingman y más allá.">Website
                                 accessibility isn't just the right thing to do — it's a legal requirement and a business
                                 advantage. WCAG 2.1 AA, ADA compliance, and what it actually means for small businesses
                                 in Kingman and beyond.</small>
@@ -600,12 +578,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="lpage">
                             <a href="https://digitalallies.net/learn/bilingual-web"
                                 data-en="Why Your Business Needs a Bilingual Website — Digital Allies"
-                                data-es="Why Your Business Needs a Bilingual Website — Digital Allies"
+                                data-es="Por Qué Tu Negocio Necesita un Sitio Web Bilingüe — Digital Allies"
                                 title="Why Your Business Needs a Bilingual Website — Digital Allies">Why Your Business
                                 Needs a Bilingual Website — Digital Allies</a>
                             <br /><small
                                 data-en="Hispanic consumers represent $1.7 trillion in U.S. buying power. If your website is English-only, you're leaving that market to competitors who showed up. Bilingual web design for Kingman and Mohave County businesses."
-                                data-es="Hispanic consumers represent $1.7 trillion in U.S. buying power. If your website is English-only, you're leaving that market to competitors who showed up. Bilingual web design for Kingman and Mohave County businesses.">Hispanic
+                                data-es="Los consumidores hispanos representan $1.7 billones en poder adquisitivo en EE. UU. Si tu sitio web está solo en inglés, estás dejando ese mercado a los competidores que sí se presentaron. Diseño web bilingüe para empresas de Kingman y el condado de Mohave.">Hispanic
                                 consumers represent $1.7 trillion in U.S. buying power. If your website is English-only,
                                 you're leaving that market to competitors who showed up. Bilingual web design for
                                 Kingman and Mohave County businesses.</small>
@@ -614,12 +592,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="lpage">
                             <a href="https://digitalallies.net/learn/dept-cooperation"
                                 data-en="App Integrations for Small Business — Dept. of Cooperation · Digital Allies"
-                                data-es="App Integrations for Small Business — Dept. of Cooperation · Digital Allies"
+                                data-es="Integraciones de Aplicaciones para Pequeñas Empresas — Departamento de Cooperación · Digital Allies"
                                 title="App Integrations for Small Business — Dept. of Cooperation · Digital Allies">App
                                 Integrations for Small Business — Dept. of Cooperation · Digital Allies</a>
                             <br /><small
                                 data-en="Your apps don't have to fight each other. Integrations connect your booking system, POS, CRM, email, and accounting so data moves without you touching it. From Digital Allies in Kingman, AZ."
-                                data-es="Your apps don't have to fight each other. Integrations connect your booking system, POS, CRM, email, and accounting so data moves without you touching it. From Digital Allies in Kingman, AZ.">Your
+                                data-es="Tus aplicaciones no tienen que pelear entre sí. Las integraciones conectan tu sistema de reservas, POS, CRM, correo electrónico y contabilidad para que los datos se muevan sin que los toques. De Digital Allies en Kingman, AZ.">Your
                                 apps don't have to fight each other. Integrations connect your booking system, POS, CRM,
                                 email, and accounting so data moves without you touching it. From Digital Allies in
                                 Kingman, AZ.</small>
@@ -628,10 +606,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <li class="lpage">
                             <a href="https://digitalallies.net/learn/design-bureau"
                                 data-en="Design & Brand for Small Business — The Design Bureau · Digital Allies"
-                                data-es="Design & Brand for Small Business — The Design Bureau · Digital Allies"
+                                data-es="Diseño y Marca para Pequeñas Empresas — El Buró de Diseño · Digital Allies"
                                 title="Design & Brand for Small Business — The Design Bureau · Digital Allies">Design &
                                 Brand for Small Business — The Design Bureau · Digital Allies</a>
-                            <br /><small data-en="" data-es=""></small>
+                            <br /><small
+                                data-en="Professional web design and brand identity services for small businesses. Stand out with a consistent and memorable look. From Digital Allies in Kingman, AZ."
+                                data-es="Diseño web profesional y servicios de identidad de marca para pequeñas empresas. Destácate con una imagen consistente y memorable. De Digital Allies en Kingman, AZ."></small>
                         </li>
 
                         <li class="lpage">
