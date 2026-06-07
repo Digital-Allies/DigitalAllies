@@ -5,3 +5,6 @@ assets/Brand System/Media/
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Local Claude Code settings (may contain API keys)
+.claude/settings.local.json
