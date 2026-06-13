@@ -92,7 +92,7 @@ focus management, `prefers-reduced-motion`. Color contrast enforced via `a11y.cs
 
 **Structured Data**
 Every page has JSON-LD schema. Learn pages carry both Service and Article schemas.
-`index.html` and `learn/seo-aeo.html` include FAQPage. See `docs/CODE-STANDARDS.md`
+`index.html` and `learn/seo-aeo.html` include FAQPage. See `assets/docs/CODE-STANDARDS.md`
 for the full schema matrix.
 
 **No-Build JavaScript**
@@ -110,7 +110,7 @@ python3 -m http.server 8080
 ```
 
 No `npm install` required for the site itself. To rebuild Tailwind or the Lucide bundle,
-see `docs/CODE-STANDARDS.md`.
+see `assets/docs/CODE-STANDARDS.md`.
 
 ---
 
