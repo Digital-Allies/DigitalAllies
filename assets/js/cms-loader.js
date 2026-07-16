@@ -2,7 +2,7 @@
 // Fetches content dynamically from Supabase and applies it to the static HTML
 
 const SUPABASE_URL = "https://auwhvicpyiwsubucanpb.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1d2h2aWNweWl3c3VidWNhbnBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1Mjc3ODgsImV4cCI6MjA5NzEwMzc4OH0.Cc-bBW1lEXR1TU4LBjwevvc6cu8OA9gMbK-mKAlpQYg";
+const supabase_anon_new = "sb_publishable_m05dPOYlsw-OmHdpggYCLg_ZTibh9Hj";
 const CLIENT_ID = "3d76b896-e1fb-49f0-a8db-f62fdd5bc258";
 
 const headers = {
