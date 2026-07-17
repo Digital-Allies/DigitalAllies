@@ -26,6 +26,15 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</sitemap.xml>; rel=\"describedby\", </learn/>; rel=\"help\", </privacy.html>; rel=\"privacy-policy\", </terms.html>; rel=\"terms-of-service\""
+        }
+      ]
     }
   ]
 }
