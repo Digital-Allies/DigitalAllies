@@ -2,7 +2,7 @@
 // Fetches content dynamically from Supabase and applies it to the static HTML
 
 const SUPABASE_URL = "https://auwhvicpyiwsubucanpb.supabase.co";
-const supabase_anon_new = "sb_publishable_m05dPOYlsw-OmHdpggYCLg_ZTibh9Hj";
+const SUPABASE_ANON_KEY = "sb_publishable_m05dPOYlsw-OmHdpggYCLg_ZTibh9Hj";
 const CLIENT_ID = "3d76b896-e1fb-49f0-a8db-f62fdd5bc258";
 
 const headers = {
@@ -11,8 +11,38 @@ const headers = {
   "Content-Type": "application/json"
 };
 
-// Helper to parse bilingual text (format: "English text || Spanish text")
+// Escape HTML special chars before interpolating CMS content into innerHTML
+function escapeHtml(text) {
+  if (text == null) return "";
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// Helper to parse bilingual text (format: "English text || Spanish text").
+// Values are HTML-escaped here since every caller interpolates them into innerHTML.
 function parseBilingual(text) {
+  if (!text) return { en: "", es: "" };
+  if (text.includes("||")) {
+    const parts = text.split("||");
+    return { en: escapeHtml(parts[0].trim()), es: escapeHtml(parts[1].trim()) };
+  }
+  const escaped = escapeHtml(text);
+  return { en: escaped, es: escaped };
+}
+
+// Same split, no escaping — for the handful of call sites (site_title,
+// hero_title, hero_subtitle) that store the value via setAttribute()/
+// textContent rather than interpolating it into an innerHTML string. Those
+// DOM APIs never parse or decode entities the way innerHTML does, and the
+// shared language-toggle script in learn/index.html later reads data-en/
+// data-es straight back into textContent on every load and toggle — so an
+// *escaped* value stored there would display literally (e.g.
+// "Design &amp; Learn") instead of the real text.
+function parseBilingualRaw(text) {
   if (!text) return { en: "", es: "" };
   if (text.includes("||")) {
     const parts = text.split("||");
@@ -40,7 +70,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // Apply identity settings
       if (map.site_title) {
-        const titleText = parseBilingual(map.site_title);
+        // Raw, not escaped — textContent/setAttribute below never parse HTML,
+        // so an escaped value would show its literal entities (see
+        // parseBilingualRaw's comment).
+        const titleText = parseBilingualRaw(map.site_title);
         const titleEl = document.querySelector("title");
         if (titleEl) {
           titleEl.textContent = titleText.en; // Fallback
@@ -52,17 +85,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Apply hero / lobby settings
       const heroTitleEl = document.getElementById("hero-heading");
       if (heroTitleEl && map.hero_title) {
+        // data-en/data-es (read back via textContent by the language toggle)
+        // need the raw value; the innerHTML assignment below needs the
+        // escaped one, since unlike data-en/data-es it's real markup.
+        const textRaw = parseBilingualRaw(map.hero_title);
         const text = parseBilingual(map.hero_title);
-        heroTitleEl.setAttribute("data-en", text.en);
-        heroTitleEl.setAttribute("data-es", text.es);
+        heroTitleEl.setAttribute("data-en", textRaw.en);
+        heroTitleEl.setAttribute("data-es", textRaw.es);
         heroTitleEl.innerHTML = document.documentElement.lang === "es" ? text.es : text.en;
       }
 
       const heroSubtitleEl = document.querySelector("#hero-heading + p");
       if (heroSubtitleEl && map.hero_subtitle) {
+        const textRaw = parseBilingualRaw(map.hero_subtitle);
         const text = parseBilingual(map.hero_subtitle);
-        heroSubtitleEl.setAttribute("data-en", text.en);
-        heroSubtitleEl.setAttribute("data-es", text.es);
+        heroSubtitleEl.setAttribute("data-en", textRaw.en);
+        heroSubtitleEl.setAttribute("data-es", textRaw.es);
         heroSubtitleEl.innerHTML = document.documentElement.lang === "es" ? text.es : text.en;
       }
     }
@@ -85,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         card.innerHTML = `
           <div class="flex justify-center mb-6">
-            <span style="font-size: 48px;">${svc.icon || "💼"}</span>
+            <span style="font-size: 48px;">${escapeHtml(svc.icon) || "💼"}</span>
           </div>
           <h3 class="font-headers font-bold text-lg mb-1" data-en="${title.en}" data-es="${title.es}">
             ${document.documentElement.lang === "es" ? title.es : title.en}
@@ -188,14 +226,14 @@ document.addEventListener("DOMContentLoaded", async () => {
           const item = document.createElement("div");
           item.className = "p-6 bg-white border border-charcoal hover:shadow-md transition duration-200";
           item.innerHTML = `
-            <span class="text-xs text-signal-red font-bold uppercase tracking-widest">${art.type || "Article"}</span>
+            <span class="text-xs text-signal-red font-bold uppercase tracking-widest">${escapeHtml(art.type) || "Article"}</span>
             <h3 class="font-headers text-xl font-bold mt-2 mb-3" data-en="${title.en}" data-es="${title.es}">
               ${document.documentElement.lang === "es" ? title.es : title.en}
             </h3>
             <p class="text-sm leading-relaxed mb-4" data-en="${excerpt.en}" data-es="${excerpt.es}">
               ${document.documentElement.lang === "es" ? excerpt.es : excerpt.en}
             </p>
-            <a href="/blog/${art.slug}" class="text-sm font-bold text-primary-blue hover:underline" data-en="Read Article &rarr;" data-es="Leer Artículo &rarr;">
+            <a href="/blog/${escapeHtml(art.slug)}" class="text-sm font-bold text-primary-blue hover:underline" data-en="Read Article &rarr;" data-es="Leer Artículo &rarr;">
               ${document.documentElement.lang === "es" ? "Leer Artículo &rarr;" : "Read Article &rarr;"}
             </a>
           `;
