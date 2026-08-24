@@ -34,6 +34,23 @@ function parseBilingual(text) {
   return { en: escaped, es: escaped };
 }
 
+// Same split, no escaping — for the handful of call sites (site_title,
+// hero_title, hero_subtitle) that store the value via setAttribute()/
+// textContent rather than interpolating it into an innerHTML string. Those
+// DOM APIs never parse or decode entities the way innerHTML does, and the
+// shared language-toggle script in learn/index.html later reads data-en/
+// data-es straight back into textContent on every load and toggle — so an
+// *escaped* value stored there would display literally (e.g.
+// "Design &amp; Learn") instead of the real text.
+function parseBilingualRaw(text) {
+  if (!text) return { en: "", es: "" };
+  if (text.includes("||")) {
+    const parts = text.split("||");
+    return { en: parts[0].trim(), es: parts[1].trim() };
+  }
+  return { en: text, es: text };
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     // 1. Load settings and apply identity/brand color
@@ -53,7 +70,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // Apply identity settings
       if (map.site_title) {
-        const titleText = parseBilingual(map.site_title);
+        // Raw, not escaped — textContent/setAttribute below never parse HTML,
+        // so an escaped value would show its literal entities (see
+        // parseBilingualRaw's comment).
+        const titleText = parseBilingualRaw(map.site_title);
         const titleEl = document.querySelector("title");
         if (titleEl) {
           titleEl.textContent = titleText.en; // Fallback
@@ -65,17 +85,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Apply hero / lobby settings
       const heroTitleEl = document.getElementById("hero-heading");
       if (heroTitleEl && map.hero_title) {
+        // data-en/data-es (read back via textContent by the language toggle)
+        // need the raw value; the innerHTML assignment below needs the
+        // escaped one, since unlike data-en/data-es it's real markup.
+        const textRaw = parseBilingualRaw(map.hero_title);
         const text = parseBilingual(map.hero_title);
-        heroTitleEl.setAttribute("data-en", text.en);
-        heroTitleEl.setAttribute("data-es", text.es);
+        heroTitleEl.setAttribute("data-en", textRaw.en);
+        heroTitleEl.setAttribute("data-es", textRaw.es);
         heroTitleEl.innerHTML = document.documentElement.lang === "es" ? text.es : text.en;
       }
 
       const heroSubtitleEl = document.querySelector("#hero-heading + p");
       if (heroSubtitleEl && map.hero_subtitle) {
+        const textRaw = parseBilingualRaw(map.hero_subtitle);
         const text = parseBilingual(map.hero_subtitle);
-        heroSubtitleEl.setAttribute("data-en", text.en);
-        heroSubtitleEl.setAttribute("data-es", text.es);
+        heroSubtitleEl.setAttribute("data-en", textRaw.en);
+        heroSubtitleEl.setAttribute("data-es", textRaw.es);
         heroSubtitleEl.innerHTML = document.documentElement.lang === "es" ? text.es : text.en;
       }
     }
